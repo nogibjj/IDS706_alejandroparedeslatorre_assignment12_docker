@@ -4,7 +4,7 @@ This repository contains a Flask-based web application that provides a movie ser
 
 ![flask_app](static/images/flaskApp.JPG)
 
-[Dockerhub Image](https://github.com/nogibjj/IDS706_alejandroparedeslatorre_assignment12_docker) 
+[Dockerhub Image](https://hub.docker.com/repository/docker/alejandroparedeslatorre/flask-app/general) 
 
 ---
 
