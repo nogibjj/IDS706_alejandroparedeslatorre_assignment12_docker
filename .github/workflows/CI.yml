@@ -16,11 +16,6 @@ jobs:
         run: make install
 
       - name: Test
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
-          DWH_DB: ${{ secrets.DWH_DB }}
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
         run: make test
 
       - name: Log in to Docker Hub

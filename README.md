@@ -1,9 +1,12 @@
-# Movie Service API
+# IDS706 Week 12 Movie Service API
 
 This repository contains a Flask-based web application that provides a movie service API. It allows users to fetch, search, and classify movies by title or genre and integrates with a language model for sentiment-based genre classification.
 
-
 ![flask_app](static/images/flaskApp.JPG)
+
+[Dockerhub Image](https://github.com/nogibjj/IDS706_alejandroparedeslatorre_assignment12_docker) 
+
+---
 
 ## Features
 
@@ -15,45 +18,45 @@ This repository contains a Flask-based web application that provides a movie ser
 
 ---
 
-
-## Installation
+## Installation Using Docker
 
 ### Prerequisites
-- Python 3.8 or higher
-- A database connection
-- API key for the Gemini Language Model
+
+- Docker installed on your system.
+- API key for the Gemini Language Model.
 
 ### Steps
+
 1. Clone the repository:
-    ```bash
-    git clone <repository_url>
-    cd <repository_folder>
-    ```
 
-2. Set up a virtual environment and activate it:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate   # On Windows: venv\Scripts\activate
-    ```
+   ```bash
+   git clone <repository_url>
+   cd <repository_folder>
+   ```
 
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+2. Create a `.env` file in the root directory and add the required environment variables:
 
-4. Set up environment variables:
-    - Create a `.env` file in the root directory.
-    - Add your database credentials and API key:
-        ```
-        LLM_API_KEY=your_api_key_here
-        ```
+   ```env
+   LLM_API_KEY=your_api_key_here
+   ```
 
-5. Configure the database connection in `data/db_connection.py`.
+3. Build the Docker image:
 
-6. Run the Flask application:
-    ```bash
-    python app.py
-    ```
+   ```bash
+   docker build -t movie-service-api .
+   ```
+
+4. Run the Docker container:
+
+   ```bash
+   docker run -d -p 5000:5000 --env-file .env movie-service-api
+   ```
+
+5. Access the application in your browser at:
+
+   ```
+   http://localhost:5000
+   ```
 
 ---
 
@@ -123,3 +126,9 @@ The application handles:
 ## License
 
 This project is licensed under the MIT License.
+
+--- 
+
+### Notes:
+- This version replaces the manual setup steps with Docker-based instructions for simplicity and consistency across environments.
+- Ensure Docker is running on your system before proceeding.
